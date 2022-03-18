@@ -9,7 +9,7 @@
  * https://github.com/kartik-v/bootstrap-star-rating/blob/master/LICENSE.md
  */
 .rating-loading {
-    width: 25px;
+    width: 25px;  
     height: 25px;
     font-size: 0;
     color: #fff;

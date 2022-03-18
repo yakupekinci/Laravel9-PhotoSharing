@@ -15,7 +15,6 @@
 */
 
 
-
  Route::get('/', array(HomeController::class,'index'))->name('index');
 
 

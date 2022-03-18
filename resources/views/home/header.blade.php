@@ -1,5 +1,4 @@
 <!-- rating -->
-
 <script>
     jQuery(document).ready(function () {
         $("#input-21f").rating({
@@ -65,6 +64,7 @@
     });
 </script>
 <!-- rating -->
+
 <!-- Page Preloder -->
 <div id="preloder">
     <div class="loader"></div>
