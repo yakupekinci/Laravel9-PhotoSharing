@@ -8,7 +8,7 @@
     <meta name="keywords" content="Phozogy, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>App Name - @yield('title')</title>
+    <title>@yield('title')</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
