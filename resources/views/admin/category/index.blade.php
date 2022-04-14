@@ -17,12 +17,12 @@
                                 <h2>Category List</h2>
                             </div>
                             <div class="d-flex">
-<<<<<<< HEAD
+
                                 <a href="/admin"> <i class="mdi mdi-home text-muted hover-cursor"></i>
                                 </a>
-=======
-                                <i class="mdi mdi-home text-muted hover-cursor"></i>
->>>>>>> origin/master
+
+
+
                                 <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
                                 <p class="text-primary mb-0 hover-cursor">Analytics</p>
                             </div>
@@ -50,7 +50,7 @@
 
 
             <div class="row">
-<<<<<<< HEAD
+
                 <div class="col-md-15 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
@@ -107,7 +107,7 @@
                 </div>
             </div>
         </div>
-=======
+
                 <div class="col-md-7 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
@@ -121,7 +121,7 @@
 
 
             </div></div></div></div></div></div>
->>>>>>> origin/master
+
 
         <!-- content-wrapper ends -->
 @endsection
