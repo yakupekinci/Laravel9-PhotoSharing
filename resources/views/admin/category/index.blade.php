@@ -17,8 +17,12 @@
                                 <h2>Category List</h2>
                             </div>
                             <div class="d-flex">
+<<<<<<< HEAD
                                 <a href="/admin"> <i class="mdi mdi-home text-muted hover-cursor"></i>
                                 </a>
+=======
+                                <i class="mdi mdi-home text-muted hover-cursor"></i>
+>>>>>>> origin/master
                                 <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
                                 <p class="text-primary mb-0 hover-cursor">Analytics</p>
                             </div>
@@ -46,6 +50,7 @@
 
 
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-md-15 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
@@ -85,7 +90,7 @@
                                         <td>{{$rs->description}}</td>
                                         <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="/admin/category/edit{{$rs->id}}"class="btn btn-success"">Edit</a>  </td>
+                                        <td><a href="/admin/category/edit{{$rs->id}}"class="btn btn-success">Edit</a>  </td>
                                         <td><a href="/admin/category/delete{{$rs->id}}"class="btn btn-primary">Delete</a>  </td>
                                         <td><a href="/admin/category/show{{$rs->id}}"class="btn btn-warning">Show</a>  </td>
                                     </tr>
@@ -102,6 +107,21 @@
                 </div>
             </div>
         </div>
+=======
+                <div class="col-md-7 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title">Welcome Admin Panel</p>
+                            <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
+                            <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3"></div>
+                            <canvas id="cash-deposits-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div></div></div></div></div></div>
+>>>>>>> origin/master
 
         <!-- content-wrapper ends -->
 @endsection

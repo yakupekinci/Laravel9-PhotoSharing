@@ -78,7 +78,11 @@
 
 
                             <label >Status</label>
+<<<<<<< HEAD
                             <select  class="form-control mb-2 mr-sm-2"class="form-control mb-2 mr-sm-2" name="status" placeholder="Status" >
+=======
+                                   <select  class="form-control mb-2 mr-sm-2" >
+>>>>>>> origin/master
                                     <option>True</option>
                                     <option>False</option>
                                    </select>

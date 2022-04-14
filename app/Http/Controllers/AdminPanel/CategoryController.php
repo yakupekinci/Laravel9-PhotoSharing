@@ -5,7 +5,10 @@ namespace App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use function MongoDB\BSON\toRelaxedExtendedJSON;
+=======
+>>>>>>> origin/master
 
 class CategoryController extends Controller
 {
@@ -16,10 +19,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $data= Category::all();
      return view('admin.category.index',[
          'data'=>$data
      ]);
+=======
+     return view('admin.category.index');
+>>>>>>> origin/master
     }
 
     /**
@@ -46,9 +53,14 @@ class CategoryController extends Controller
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+<<<<<<< HEAD
         $data->status =true;
         $data->save();
         return  redirect('admin/category');
+=======
+        $data->status =1;
+        $data->save();
+>>>>>>> origin/master
 
     }
 
