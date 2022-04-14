@@ -20,11 +20,11 @@ return new class extends Migration {
             $table->string('keywords')->nullable();;
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-<<<<<<< HEAD
+
             $table->string('status', 6)->nullable();
-=======
+
             $table->string('status', 6);
->>>>>>> origin/master
+
             $table->timestamps();
         });
     }
