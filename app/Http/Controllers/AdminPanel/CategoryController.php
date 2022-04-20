@@ -6,9 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-use function MongoDB\BSON\toRelaxedExtendedJSON;
 
-
+//trying
 class CategoryController extends Controller
 {
     /**
@@ -20,11 +19,19 @@ class CategoryController extends Controller
     {
 
         $data= Category::all();
+
         return view('admin.category.index',[
             'data'=>$data
         ]);
 
         return view('admin.category.index');
+
+     return view('admin.category.index',[
+         'data'=>$data
+     ]);
+
+     return view('admin.category.index');
+
 
     }
 
@@ -52,9 +59,18 @@ class CategoryController extends Controller
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+
         $data->status =$request-> status;
         $data->save();
         return  redirect('admin/category');
+
+
+        $data->status =true;
+        $data->save();
+        return  redirect('admin/category');
+
+        $data->status =1;
+        $data->save();
 
 
 

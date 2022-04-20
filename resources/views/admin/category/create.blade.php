@@ -79,17 +79,17 @@
 
                             <label >Status</label>
 
-                            <select  class="form-control mb-2 mr-sm-2" name="status"  >
+                            <select  class="form-control mb-2 mr-sm-2" name="status" placeholder="Status" >
 
 
 
-                                    <option value="True">True</option>
-                                    <option value="False">False</option>
+                                    <option>True</option>
+                                    <option>False</option>
                                    </select>
 
 
                             <div style="padding-top: 10px">
-                            <button type="submit" class="btn btn-primary mb-2">Update Date</button>
+                            <button type="submit" class="btn btn-primary mb-2">Save</button>
                            </div>
 
                         </form>
