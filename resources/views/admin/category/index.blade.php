@@ -61,6 +61,9 @@
                                     <thead>
                                     <tr>
                                         <th>
+                                            Id
+                                        </th>
+                                        <th>
                                             Title
                                         </th>
                                         <th>
@@ -87,12 +90,13 @@
                                     <tr>
                                         <td>{{$rs->id}}</td>
                                         <td>{{$rs->title}}</td>
+                                        <td>{{$rs->keywords}}</td>
                                         <td>{{$rs->description}}</td>
                                         <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="/admin/category/edit{{$rs->id}}"class="btn btn-success">Edit</a>  </td>
-                                        <td><a href="/admin/category/delete{{$rs->id}}"class="btn btn-primary">Delete</a>  </td>
-                                        <td><a href="/admin/category/show{{$rs->id}}"class="btn btn-warning">Show</a>  </td>
+                                        <td><a href="/admin/category/edit/{{$rs->id}}"class="btn btn-success">Edit</a>  </td>
+                                        <td><a href="/admin/category/delete/{{$rs->id}}"class="btn btn-primary">Delete</a>  </td>
+                                        <td><a href="/admin/category/show/{{$rs->id}}"class="btn btn-warning">Show</a>  </td>
                                     </tr>
 
 

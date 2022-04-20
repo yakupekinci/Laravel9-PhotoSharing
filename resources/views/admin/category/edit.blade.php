@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Category')
+@section('title', 'EditCategory: '.$data->title)
 
 
 
@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <h2>Add Category</h2>
+                                <h2>Edit Category: {{$data->title}}</h2>
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
@@ -47,19 +47,19 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Category</h4>
+                        <h4 class="card-title">Edit Category</h4>
 
 
-                        <form class="form-inline" action="/admin/category/store"  method="post">
+                        <form class="form-inline" action="/admin/category/update/{{$data->id}}"  method="post">
                             @csrf
                             <label class= "sr-only" for="inlineFormInputName2">Title</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" name="title" placeholder="Title">
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="title"  value=" {{$data->title}}" >
 
                             <label class= "sr-only" for="inlineFormInputName2">Keywords</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" name="keywords" placeholder="Keywords">
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="keywords" value=" {{$data->keywords}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Description</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" name="description" placeholder="Description">
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="description" value=" {{$data->description}}">
 
                             <label>Image</label>
                             <div class="form-group">
@@ -79,10 +79,10 @@
 
                             <label >Status</label>
 
-                            <select  class="form-control mb-2 mr-sm-2" name="status"  >
+                            <select  class="form-control mb-2 mr-sm-2"  name="status">
 
 
-
+                                <option >{{$data->status}}</option>
                                     <option value="True">True</option>
                                     <option value="False">False</option>
                                    </select>
