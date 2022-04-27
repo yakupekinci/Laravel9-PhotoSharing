@@ -18,7 +18,7 @@
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
-                                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
+                                <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">/Dashboard&nbsp;/</a></p>
                                 <p class="text-primary mb-0 hover-cursor">Analytics</p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                         <h4 class="card-title">Category</h4>
 
 
-                        <form class="form-inline" action="/admin/category/store"  method="post">
+                        <form class="form-inline" action="{{route('admin.category.create')}}"  method="post">
                             @csrf
                             <label class= "sr-only" for="inlineFormInputName2">Title</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="title" placeholder="Title">

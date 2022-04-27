@@ -14,13 +14,13 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-primary">Edit </a>
-                                <a href="/admin/category/destroy/{{$data->id}}"  onclick="return confirm('Deleting !! Are you sure ?') " class="btn btn-danger">Delete</a>
+                                <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary">Edit </a>
+                                <a href="{{route('admin.category.destroy',['id'=>$data->id])}}"  onclick="return confirm('Deleting !! Are you sure ?') " class="btn btn-danger">Delete</a>
 
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
-                                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
+                                <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">/Dashboard&nbsp;/</a></p>
                                 <p class="text-primary mb-0 hover-cursor">Show Category</p>
                             </div>
                         </div>

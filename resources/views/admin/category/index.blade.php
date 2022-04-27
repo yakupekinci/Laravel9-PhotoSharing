@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <a href="/admin/category/create" class="btn btn-info">Add Category</a>
+                                <a href="{{route('admin.category.create')}}" class="btn btn-info">Add Category</a>
                             </div>
                             <div class="d-flex">
 
@@ -23,7 +23,7 @@
 
 
 
-                                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
+                                <a class="text-muted mb-0 hover-cursor" href="{{route('admin.index')}}">/Dashboard/</a></p>
                                 <p class="text-primary mb-0 hover-cursor">Analytics</p>
                             </div>
                         </div>
@@ -95,11 +95,11 @@
                                         <td>{{$rs->description}}</td>
                                         <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="/admin/category/edit/{{$rs->id}}"class="btn btn-success">Edit</a>  </td>
-                                        <td><a href="/admin/category/destroy/{{$rs->id}}"class="btn btn-primary"
+                                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-success">Edit</a>  </td>
+                                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"class="btn btn-primary"
                                             onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>  </td>
 
-                                        <td><a href="/admin/category/show/{{$rs->id}}"class="btn btn-warning">Show</a>  </td>
+                                        <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"class="btn btn-warning">Show</a>  </td>
                                     </tr>
 
 
