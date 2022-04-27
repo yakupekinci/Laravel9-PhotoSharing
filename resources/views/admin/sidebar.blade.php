@@ -14,7 +14,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin/image">
                 <i class="mdi mdi-folder-multiple-image"></i>
                 <span class="menu-title">&nbsp;&nbsp; Images</span>
             </a>

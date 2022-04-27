@@ -96,7 +96,9 @@
                                         <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="/admin/category/edit/{{$rs->id}}"class="btn btn-success">Edit</a>  </td>
-                                        <td><a href="/admin/category/delete/{{$rs->id}}"class="btn btn-primary">Delete</a>  </td>
+                                        <td><a href="/admin/category/destroy/{{$rs->id}}"class="btn btn-primary"
+                                            onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>  </td>
+
                                         <td><a href="/admin/category/show/{{$rs->id}}"class="btn btn-warning">Show</a>  </td>
                                     </tr>
 
