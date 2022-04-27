@@ -68,7 +68,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Image</th>
-
+                                                <td>{{$data->image}}</td>
                                             </tr>
                                             <tr>
                                                 <th>Status</th>

@@ -4,7 +4,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/admin/">
                 <i class="mdi mdi-home"></i>
-                <span class="menu-title">&nbsp;&nbsp;Dashboard</span>
+                <span class="menu-title">&nbsp;&nbsp;&nbsp;Dashboard</span>
             </a>
         </li>
         <li class="nav-item">

@@ -23,7 +23,7 @@
 
 
 
-                                <a class="text-muted mb-0 hover-cursor" href="{{route('admin.index')}}">/Dashboard/</a></p>
+                                <a class="text-muted mb-0 hover-cursor" href="{{route('admin.index')}}/">/Dashboard/</a></p>
                                 <p class="text-primary mb-0 hover-cursor">Analytics</p>
                             </div>
                         </div>
@@ -93,7 +93,11 @@
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->keywords}}</td>
                                         <td>{{$rs->description}}</td>
-                                        <td>{{$rs->image}}</td>
+                                        <td>
+                                            @if($rs->image)
+                                           <img src="{{Storage::url($rs->image)}}"style="height: 30px">
+                                            @endif
+                                        </td>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-success">Edit</a>  </td>
                                         <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"class="btn btn-primary"

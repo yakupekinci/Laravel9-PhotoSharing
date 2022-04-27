@@ -18,7 +18,7 @@
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
-                                <p class="text-muted mb-0 hover-cursor">&nbsp;<a href="{{route('admin.index')}}">/Dashboard&nbsp;/</a>&nbsp;</p>
+                                <p class="text-muted mb-0 hover-cursor">&nbsp;<a href="{{route('admin.index')}}/">/Dashboard&nbsp;/</a>&nbsp;</p>
                                 <p class="text-primary mb-0 hover-cursor">Edit Category</p>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                         <h4 class="card-title">Edit Category</h4>
 
 
-                        <form class="form-inline" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+                        <form class="form-inline" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <label class= "sr-only" for="inlineFormInputName2">Title</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="title"  value=" {{$data->title}}" >
@@ -66,11 +66,9 @@
 
 
                                 <div class="input-group col-xs-12">
-                                    <input type="file" name="img[]" class="form-control custom-file-input">
+                                    <input type="file" name="image" class="form-control custom-file-input">
 
-                                    <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
+
                                 </div>
                             </div>
 
