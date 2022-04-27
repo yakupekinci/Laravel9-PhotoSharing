@@ -56,7 +56,7 @@ class CategoryController extends Controller
         $data->save();
         return  redirect('admin/category');
 
-//harrik müslüm
+
 
     }
 

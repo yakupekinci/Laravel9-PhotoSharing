@@ -33,6 +33,7 @@
                                 <i class="mdi mdi-plus text-muted"></i>
                             </button>
                             <button class="btn btn-primary mt-2 mt-xl-0">Generate report</button>
+
                         </div>
                     </div>
                 </div>

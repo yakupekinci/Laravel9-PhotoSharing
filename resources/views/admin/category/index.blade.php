@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <h2>Category List</h2>
+                                <a href="/admin/category/create" class="btn btn-info">Add Category</a>
                             </div>
                             <div class="d-flex">
 
@@ -54,6 +54,7 @@
                 <div class="col-md-15 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
+
                             <h4 class="card-title">Category List</h4>
 
                             <div class="table-responsive pt-3">
