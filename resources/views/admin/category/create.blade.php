@@ -53,6 +53,15 @@
 
                         <form class="form-inline" action="{{route('admin.category.store')}}"  method="post" enctype="multipart/form-data">
                             @csrf
+
+                            <label class= "sr-only" for="inlineFormInputName2">Parent Category</label>
+                            <select class="form-control mb-2 mr-sm-3" name="parent_id"  style="...">
+                                <option value="0" selected="selected">Main Category</option>
+                                @foreach($data as $rs)
+                                    <option value="{{$rs->id}}"> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }} </option>
+                                @endforeach
+                            </select>
+
                             <label class= "sr-only" for="inlineFormInputName2">Title</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="title" placeholder="Title">
 
@@ -61,6 +70,9 @@
 
                             <label class= "sr-only" for="inlineFormInputName2">Description</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="description" placeholder="Description">
+
+
+
 
                             <label>Image</label>
                             <div class="form-group">

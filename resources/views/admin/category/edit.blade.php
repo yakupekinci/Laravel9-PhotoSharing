@@ -52,6 +52,14 @@
 
                         <form class="form-inline" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <label class= "sr-only" for="inlineFormInputName2">Parent Category</label>
+                            <select class="form-control mb-2 mr-sm-3" name="parent_id"  style="...">
+                                <option value="0" selected="selected">Main Category</option>
+                                @foreach($datalist  as $rs)
+                                    <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title) }}</option>
+                                @endforeach
+                            </select>
+
                             <label class= "sr-only" for="inlineFormInputName2">Title</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="title"  value=" {{$data->title}}" >
 
