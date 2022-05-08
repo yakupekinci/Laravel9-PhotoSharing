@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Category List')
+@section('title', 'Photo List')
 
 
 
@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <a href="{{route('admin.category.create')}}" class="btn btn-info">Add Category</a>
+                                <a href="{{route('admin.photo.create')}}" class="btn btn-info">Add Photo</a>
                             </div>
                             <div class="d-flex">
 
@@ -55,15 +55,16 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h4 class="card-title">Category List</h4>
+                            <h4 class="card-title">Photo List</h4>
 
                             <div class="table-responsive pt-3">
                                 <table class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Parent</th>
-                                        <th>Title</th>
+                                        <th>Category</th>
+                                        <th>Rate</th>
+                                        <th>Videlink</th>
                                         <th>Image</th>
                                         <th>Status</th>
 
@@ -78,7 +79,10 @@
                                     <tr>
                                         <td>{{$rs->id}}</td>
                                         <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title) }}</td>
-                                        <td>{{$rs->title}}</td>
+                                        <td>{{$rs->rate}}</td>
+                                        <td>{{$rs->videlink}}</td>
+
+
 
 
                                         <td>
@@ -87,11 +91,11 @@
                                             @endif
                                         </td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-success">Edit</a>  </td>
-                                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"class="btn btn-primary"
+                                        <td><a href="{{route('admin.photo.edit',['id'=>$rs->id])}}" class="btn btn-success">Edit</a>  </td>
+                                        <td><a href="{{route('admin.photo.destroy',['id'=>$rs->id])}}"class="btn btn-primary"
                                             onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>  </td>
 
-                                        <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"class="btn btn-warning">Show</a>  </td>
+                                        <td><a href="{{route('admin.photo.show',['id'=>$rs->id])}}"class="btn btn-warning">Show</a>  </td>
                                     </tr>
 
 
@@ -107,16 +111,7 @@
             </div>
         </div>
 
-                <div class="col-md-7 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-title">Welcome Admin Panel</p>
-                            <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
-                            <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3"></div>
-                            <canvas id="cash-deposits-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
+
 
 
             </div></div></div></div></div></div>

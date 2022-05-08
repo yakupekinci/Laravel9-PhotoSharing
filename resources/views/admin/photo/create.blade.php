@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Category')
+@section('title', 'Add Photo')
 
 
 
@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <h2>Add Category</h2>
+                                <h2>Add Photo</h2>
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
@@ -48,15 +48,15 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Category</h4>
+                        <h4 class="card-title">Photo</h4>
 
 
-                        <form class="form-inline" action="{{route('admin.category.store')}}"  method="post" enctype="multipart/form-data">
+                        <form class="form-inline" action="{{route('admin.photo.store')}}"  method="post" enctype="multipart/form-data">
                             @csrf
 
-                            <label class= "sr-only" for="inlineFormInputName2">Parent Category</label>
-                            <select class="form-control mb-2 mr-sm-3" name="parent_id"  style="...">
-                                <option value="0" selected="selected">Main Category</option>
+                            <label class= "sr-only" for="inlineFormInputName2">Parent Photo</label>
+                            <select class="form-control mb-2 mr-sm-3" name="category_id"  style="...">
+
                                 @foreach($data as $rs)
                                     <option value="{{$rs->id}}"> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }} </option>
                                 @endforeach
@@ -71,17 +71,19 @@
                             <label class= "sr-only" for="inlineFormInputName2">Description</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="description" placeholder="Description">
 
+                            <label class= "sr-only" for="inlineFormInputName2">Videlink</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="videlink" placeholder="Videlink">
 
+                            <label class= "sr-only" for="inlineFormInputName2">Rate</label>
+                            <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="0">
 
+                            <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
+                            <textarea  class="form-control mb-2 mr-sm-2" name="detail" ></textarea>
 
                             <label>Image</label>
                             <div class="form-group">
-
-
                                 <div class="input-group col-xs-12">
                                     <input type="file" name="image" class="form-control custom-file-input">
-
-
                                 </div>
                             </div>
 

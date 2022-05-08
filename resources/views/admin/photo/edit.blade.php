@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'EditCategory: '.$data->title)
+@section('title', 'Edit Photo: '.$data->title)
 
 
 
@@ -14,12 +14,12 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <h2>Edit Category: {{$data->title}}</h2>
+                                <h2>Edit Photo: {{$data->title}}</h2>
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
                                 <p class="text-muted mb-0 hover-cursor">&nbsp;<a href="{{route('admin.index')}}/">/Dashboard&nbsp;/</a>&nbsp;</p>
-                                <p class="text-primary mb-0 hover-cursor">Edit Category</p>
+                                <p class="text-primary mb-0 hover-cursor">Edit Photo</p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between align-items-end flex-wrap">
@@ -47,16 +47,15 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Edit Category</h4>
+                        <h4 class="card-title">Photo Category</h4>
 
 
-                        <form class="form-inline" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                        <form class="form-inline" action="{{route('admin.photo.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <label class= "sr-only" for="inlineFormInputName2">Parent Category</label>
-                            <select class="form-control mb-2 mr-sm-3" name="parent_id"  style="...">
-                                <option value="0" selected="selected">Main Category</option>
+                            <select class="form-control mb-2 mr-sm-3" name="category_id"  style="...">
                                 @foreach($datalist  as $rs)
-                                    <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title) }}</option>
+                                    <option value="{{$rs->id}}" @if($rs->id==$data->category_id) selected="selected" @endif>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title) }}</option>
                                 @endforeach
                             </select>
 
@@ -69,6 +68,14 @@
                             <label class= "sr-only" for="inlineFormInputName2">Description</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="description" value=" {{$data->description}}">
 
+                            <label class= "sr-only" for="inlineFormInputName2">Videlink</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="videlink" value=" {{$data->videlink}}>
+
+                            <label class= "sr-only" for="inlineFormInputName2">Rate</label>
+                            <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value=" {{$data->rate}}>
+
+                            <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
+                            <textarea  class="form-control mb-2 mr-sm-2" name="detail" ></textarea>
                             <label>Image</label>
                             <div class="form-group">
 

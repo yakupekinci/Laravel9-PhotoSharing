@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+
 use App\Models\Photo;
 use Illuminate\Http\Request;
 
@@ -13,28 +14,6 @@ use function MongoDB\BSON\toRelaxedExtendedJSON;
 
 class AdminPhotoController extends Controller
 {
-    protected $appends= [
-        'getParentsTree'
-    ];
-
-    public static function  getParentsTree($photo,$title){
-
-        if($photo->parent_id ==0)
-        {
-            return $title;
-        }
-        $parent =Photo::find($photo->parent_id);
-        $title =$parent->title.' > '.$title;
-        return CategoryController::getParentsTree($parent,$title);
-    }
-
-
-
-
-
-
-
-
 
 
 
@@ -52,7 +31,7 @@ class AdminPhotoController extends Controller
         ]);
 
 
-  
+
     }
 
     /**
@@ -83,14 +62,16 @@ class AdminPhotoController extends Controller
         $data->user_id =0;  //$request->category_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
-        $data->detail = $request->detail;
+        $data->description = $request->description;
         $data->videlink = $request->videlink;
         $data->rate = $request->rate;
-        $data->status =$request-> status;
+        $data->detail = $request->detail;
+
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');
 
         }
+        $data->status =$request-> status;
         $data->save();
         return  redirect('admin/photo');
 
@@ -123,7 +104,7 @@ class AdminPhotoController extends Controller
     {
         //
         $data= Photo::find($id);
-        $datalist= Category::all();
+        $datalist= Photo::all();
         return view('admin.photo.edit',[
             'data'=>$data,
             'datalist'=>$datalist
@@ -146,6 +127,7 @@ class AdminPhotoController extends Controller
         $data->user_id =0;  //$request->category_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
+        $data->description = $request->description;
         $data->detail = $request->detail;
         $data->videlink = $request->videlink;
         $data->rate = $request->rate;
@@ -171,7 +153,10 @@ class AdminPhotoController extends Controller
         //
 
         $data= Photo::find($id);
-        Storage::delete($data->image);
+        if($data->image && Storage::disk('public')->exists($data->image)){
+            Storage::delete($data->image);
+        }
+
         $data->delete();
         return redirect('admin/photo');
 

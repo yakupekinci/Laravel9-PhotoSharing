@@ -20,9 +20,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
-            $table->string('detail')->nullable();
             $table->string('videlink')->nullable();
             $table->float('rate')->nullable();
+            $table->string('detail')->nullable();
+            $table->string('image')->nullable();
             $table->string('status', 6)->default('False');
             $table->timestamps();
         });

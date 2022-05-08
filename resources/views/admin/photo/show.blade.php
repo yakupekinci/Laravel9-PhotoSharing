@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Category: '.$data->title)
+@section('title', 'Show Photo: '.$data->title)
 
 
 
@@ -14,14 +14,14 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary">Edit </a>
-                                <a href="{{route('admin.category.destroy',['id'=>$data->id])}}"  onclick="return confirm('Deleting !! Are you sure ?') " class="btn btn-danger">Delete</a>
+                                <a href="{{route('admin.photo.edit',['id'=>$data->id])}}" class="btn btn-primary">Edit </a>
+                                <a href="{{route('admin.photo.destroy',['id'=>$data->id])}}"  onclick="return confirm('Deleting !! Are you sure ?') " class="btn btn-danger">Delete</a>
 
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
                                 <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">/Dashboard&nbsp;/</a></p>
-                                <p class="text-primary mb-0 hover-cursor">Show Category</p>
+                                <p class="text-primary mb-0 hover-cursor">Show Photo</p>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between align-items-end flex-wrap">
@@ -64,22 +64,39 @@
                                             </tr>
                                             <tr>
                                                 <th>Keywords</th>
-                                                <td>{{$data->keywords}}</td>
+                                                <td>
+                                                    {{$data->keywords}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Videlink</th>
+                                                <td>
+                                                    {{$data->videlink}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Rate</th>
+                                                <td>
+                                                    {{$data->rate}}
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th>Image</th>
-                                                <td>{{$data->image}}</td>
+                                                <td>@if($data->image)
+                                                        <img src="{{Storage::url($data->image)}}" style="height: 30px">
+                                                    @endif
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th>Status</th>
                                                 <td>{{$data->status}}</td>
                                             </tr>
                                             <tr>
-                                                <th>Created Category</th>
+                                                <th>Created Photo</th>
                                                 <td>{{$data->created_at}}</td>
                                             </tr>
                                             <tr>
-                                                <th>Updated Category</th>
+                                                <th>Updated Photo</th>
                                                 <td>{{$data->updated_at}}</td>
                                             </tr>
 
