@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 //****************************** ADMİN PANEL ROUTES ************************************//
-Route::prefix('admin/')->name('admin.')->group(function () {
+Route::prefix('admin/')->name('admin.')->group(callback: function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
     //****************************** ADMİN CATEGORY ROUTES ************************************//
     Route::prefix('category')->name('category.')->controller( AdminCategoryController::class)->group(function () {
@@ -37,4 +37,16 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     Route::get('/destroy/{id}','destroy')->name('destroy');
     Route::get('/show/{id}','show')->name('show');
 });
+    //****************************** ADMİN PHOTO ROUTES ************************************//
+    Route::prefix('photo')->name('photo.')->controller(AdminPhotoController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
+    });
+
+
 });
