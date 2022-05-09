@@ -75,6 +75,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+
                                     @foreach($data as $rs )
                                     <tr>
                                         <td>{{$rs->id}}</td>
