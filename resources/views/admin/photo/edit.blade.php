@@ -69,13 +69,14 @@
                             <input type="text" class="form-control mb-2 mr-sm-2" name="description" value=" {{$data->description}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Videlink</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" name="videlink" value=" {{$data->videlink}}>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="videlink" value=" {{$data->videlink}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Rate</label>
-                            <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value=" {{$data->rate}}>
+                            <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="{{$data->rate}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
-                            <textarea  class="form-control mb-2 mr-sm-2" name="detail" ></textarea>
+                            <textarea class="form-control mb-2 mr-sm-2" name="detail" value="{{$data->detail}}">
+                            </textarea>
                             <label>Image</label>
                             <div class="form-group">
 

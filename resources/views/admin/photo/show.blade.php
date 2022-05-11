@@ -56,7 +56,15 @@
 
                                             <tr>
                                                 <th>Id</th>
-                                                <td>{{$data->id}}</td>
+                                                <td>
+                                                    {{$data->id}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Category</th>
+                                                <td>
+                                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category,$data->category->title) }}
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th>Title</th>
