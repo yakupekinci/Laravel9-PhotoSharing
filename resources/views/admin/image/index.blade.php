@@ -1,18 +1,34 @@
-<div class="main-panel">
-        <div class="content-wrapper">
+@extends('layouts.adminwindow')
 
-            <div class="row">
-                <div class="col-md-12 grid-margin">
-                    <div class="d-flex justify-content-between flex-wrap">
+@section('title', 'Photo Image Gallery')
 
 
-                    </div>
-                </div>
+
+@section('content')
+
+<h2>{{$photo->title}}</h2>
+    <form class="form-inline" action="{{route('admin.image.store',['pid'=>$photo->id])}}"  method="post" enctype="multipart/form-data">
+        @csrf
+
+
+        <label>Title</label>
+        <div class="form-group" >
+            <input type="text" class="form-control mb-2 mr-sm-2" name="title" placeholder="Title">
+
+            <div class="input-group col-xs-12">
+                <input type="file" name="image" class="form-control custom-file-input">
             </div>
-            <div class="row">
-                <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body dashboard-tabs p-0">
+            <div >
+                <button type="submit" class="btn btn-primary mb-2" value="Upload">Update</button>
+            </div>
+        </div>
+
+
+
+    </form>
+
+
+
 
 
 
@@ -23,7 +39,6 @@
                         <div class="card-body">
 
                             <h4 class="card-title">Photo Image</h4>
-
                             <div class="table-responsive pt-3">
                                 <table class="table table-bordered">
                                     <thead>
@@ -38,7 +53,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($data as $rs )
+                                    @foreach($images as $rs )
                                     <tr>
                                         <td>{{$rs->id}}</td>
                                         <td>{{$rs->title}}</td>
@@ -49,9 +64,8 @@
                                            <img src="{{Storage::url($rs->image)}}"style="height: 30px">
                                             @endif
                                         </td>
-                                        <td>{{$rs->status}}</td>
-                                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-success">Edit</a>  </td>
-                                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"class="btn btn-primary"
+                                        
+                                        <td><a href="{{route('admin.image.destroy',['pid'=>$photo->id,'id'=>$rs->id])}}"class="btn btn-primary"
                                             onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>  </td>
 
 
@@ -64,8 +78,6 @@
                             </div>
                         </div>
                     </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -73,8 +85,8 @@
 
 
 
-            </div></div></div></div></div></div>
 
 
         <!-- content-wrapper ends -->
 
+@endsection
