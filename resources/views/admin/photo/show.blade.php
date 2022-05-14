@@ -96,6 +96,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>Detail Inf</th>
+                                                <td>{{$data->detail}}</td>
+                                            </tr>
+                                            <tr>
                                                 <th>Status</th>
                                                 <td>{{$data->status}}</td>
                                             </tr>

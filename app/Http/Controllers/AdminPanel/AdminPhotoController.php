@@ -104,7 +104,7 @@ class AdminPhotoController extends Controller
     {
         //
         $data= Photo::find($id);
-        $datalist= Photo::all();
+        $datalist= Category::all();
         return view('admin.photo.edit',[
             'data'=>$data,
             'datalist'=>$datalist
