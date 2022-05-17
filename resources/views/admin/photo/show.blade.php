@@ -97,7 +97,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Detail Inf</th>
-                                                <td>{{$data->detail}}</td>
+                                                <td>{!!$data->detail!!}</td>
                                             </tr>
                                             <tr>
                                                 <th>Status</th>

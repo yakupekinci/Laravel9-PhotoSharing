@@ -2,7 +2,11 @@
 
 @section('title', 'Edit Photo: '.$data->title)
 
+@section('head')
 
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+@endsection
 
 @section('content')
 
@@ -74,7 +78,7 @@
                             <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="{{$data->rate}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
-                            <input  rows="5" class="form-control mb-2 mr-sm-2" name="detail" value="{{$data->detail}}">
+                            <textarea  class="form-control mb-2 mr-sm-2" id="detail" name="detail">{!!$data->detail!!}}</textarea>
 
                             <label>Image</label>
                             <div class="form-group">
@@ -112,6 +116,18 @@
 
 
             </div></div></div></div></div></div>
+@section('footer')
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
+    <script>
+        $(function (){
+
+            //summernote
+            $('#detail').summernote()
+
+        })
+
+    </script>
+@endsection
         <!-- content-wrapper ends -->
 @endsection

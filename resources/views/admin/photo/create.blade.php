@@ -2,7 +2,9 @@
 
 @section('title', 'Add Photo')
 
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
 
@@ -78,7 +80,17 @@
                             <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="0">
 
                             <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
-                            <textarea  class="form-control mb-2 mr-sm-2" name="detail" ></textarea>
+                            <textarea  class="form-control mb-2 mr-sm-2" id="detail" name="detail" ></textarea>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#detail' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
 
                             <label>Image</label>
                             <div class="form-group">

@@ -10,7 +10,12 @@ class HomeController extends Controller
     //
     public function index(){
 
-        return view("admin.index");
+        $sliderdata=Product::all()->limit(3);
+        return view('admin.index',[
+            'sliderdata'=>$sliderdata
+
+        ]);
+
 
 
     }

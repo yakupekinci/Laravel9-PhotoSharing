@@ -64,7 +64,7 @@
                                            <img src="{{Storage::url($rs->image)}}"style="height: 30px">
                                             @endif
                                         </td>
-                                        
+
                                         <td><a href="{{route('admin.image.destroy',['pid'=>$photo->id,'id'=>$rs->id])}}"class="btn btn-primary"
                                             onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>  </td>
 
