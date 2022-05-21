@@ -46,6 +46,7 @@ class ImageController extends Controller
             $data->image= $request->file('image')->store('images');
 
         }
+
         $data->save();
         return  redirect()->route('admin.image.index',['pid'=>$pid]);
 

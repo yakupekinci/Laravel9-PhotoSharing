@@ -71,6 +71,7 @@ class AdminPhotoController extends Controller
             $data->image= $request->file('image')->store('images');
 
         }
+
         $data->status =$request-> status;
         $data->save();
         return  redirect('admin/photo');
