@@ -82,14 +82,15 @@
 
             <div class="categories-slider owl-carousel">
                 @foreach(  $photolist1 as $rs)
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="{{Storage::url($rs->category->image)}}"></div>
-                    <div class="cs-text">
-                        <h4>{{$rs->category->title}}</h4>
-                        <span>220 pictures</span>
+                    <div class="cs-item">
+                        <div class="cs-pic set-bg" data-setbg="{{Storage::url($rs->image)}}"></div>
+                        <div class="cs-text">
+                            <h4>{{$rs->title}}</h4>
+                            <span>220 pictures</span>
+                        </div>
                     </div>
-                </div>
-                @endforeach
+            @endforeach
+
                 <!-- <div class="cs-item">
                     <div class="cs-pic set-bg" data-setbg="{{asset("assets")}}/img/categories/cat-2.jpg"></div>
                     <div class="cs-text">
@@ -118,10 +119,8 @@
                         <h4>Space</h4>
                         <span>170 pictures</span>
                     </div>
-                </div>
+                </div>-->
             </div>
--->
-
         </div>
     </section>
     <!-- Categories Section End -->
