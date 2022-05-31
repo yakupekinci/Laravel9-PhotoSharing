@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="logo">
-                    <a href="./index.html">
+                    <a href="{{route('index')}}">
                         <img src="{{asset("assets")}}/img/logo.png" alt="">
                     </a>
                 </div>

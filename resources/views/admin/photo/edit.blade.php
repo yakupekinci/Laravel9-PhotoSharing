@@ -78,7 +78,7 @@
                             <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="{{$data->rate}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
-                            <textarea  class="form-control mb-2 mr-sm-2" id="detail" name="detail">{!!$data->detail!!}}</textarea>
+                            <textarea  class="form-control mb-2 mr-sm-2" id="detail" name="detail"> {!! $data->detail !!}</textarea>
 
                             <label>Image</label>
                             <div class="form-group">

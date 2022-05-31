@@ -13,11 +13,12 @@ class HomeController extends Controller
     {
         $sliderdata = Photo::limit(4)->get();
         $photolist1 = Category::limit(6)->get();
-
+        $photolist2 = Photo::limit(6)->get();
         return view('home.index', [
 
                 'sliderdata' => $sliderdata,
                 'photolist1' => $photolist1,
+                'photolist2' => $photolist2,
 
             ]
 

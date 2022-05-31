@@ -79,7 +79,6 @@
                     <div class="right-btn"><a href="#" class="primary-btn">VIew all</a></div>
                 </div>
             </div>
-
             <div class="categories-slider owl-carousel">
                 @foreach(  $photolist1 as $rs)
                     <div class="cs-item">
@@ -136,11 +135,10 @@
                     <div class="filter-controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".fashion">Fashion</li>
-                            <li data-filter=".lifestyle">Lifestyle</li>
-                            <li data-filter=".natural">Natural</li>
-                            <li data-filter=".wedding">Wedding</li>
-                            <li data-filter=".videos">Videos</li>
+                            @foreach(  $photolist2 as $data)
+                            <li data-filter=".{{$data->category->title}}">{{$data->category->title}}</li>
+                            @endforeach
+                           
                         </ul>
                     </div>
                 </div>
@@ -150,39 +148,27 @@
             <div class="row">
                 <div class="col-lg-12 p-0">
                     <div class="portfolio-filter">
-                        <div class="pf-item set-bg fashion" data-setbg="{{asset("assets")}}/img/portfolio/pf-1.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-1.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
+                        @foreach(  $photolist2 as $data)
+                        <div class="pf-item set-bg {{$data->category->title}}" data-setbg="{{Storage::url($data->image)}}">
+                            <a href="{{route('photo',['id'=>$data])}}"><span class="icon_plus"></span></a>
 
-                                </div>
-                            </form>
 
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+
+                                <span>{{$data->title}}</span>
                             </div>
                         </div>
-                        <div class="pf-item large-width large-height set-bg lifestyle"
+                        @endforeach
+                        <!--
+                      <div class="pf-item large-width large-height set-bg lifestyle"
                              data-setbg="{{asset("assets")}}/img/portfolio/pf-2.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-2.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
+                            <a href="{{route('photo',['id'=>$rs->photos[0]->id??''])}}"><span class="icon_plus"></span></a>
 
-                                </div>
-                            </form>
 
 
 
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
 
@@ -190,140 +176,67 @@
 
 
                             <a href="{{asset("assets")}}/img/portfolio/pf-3.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item large-height set-bg wedding" data-setbg="{{asset("assets")}}/img/portfolio/pf-4.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-4.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item set-bg lifestyle" data-setbg="{{asset("assets")}}/img/portfolio/pf-7.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-7.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item set-bg natural" data-setbg="{{asset("assets")}}/img/portfolio/pf-8.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-8.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item set-bg videos" data-setbg="{{asset("assets")}}/img/portfolio/pf-5.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-5.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item set-bg fashion" data-setbg="{{asset("assets")}}/img/portfolio/pf-6.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-6.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
-
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item large-width set-bg videos" data-setbg="{{asset("assets")}}/img/portfolio/pf-10.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-10.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                < <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item set-bg fashion" data-setbg="{{asset("assets")}}/img/portfolio/pf-11.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-11.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
                         </div>
                         <div class="pf-item large-width large-height set-bg wedding"
                              data-setbg="{{asset("assets")}}/img/portfolio/pf-9.jpg">
                             <a href="{{asset("assets")}}/img/portfolio/pf-9.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
 
-                                </div>
-                            </form>
                             <div class="pf-text">
-                                <h4>COLORS SPEAK</h4>
-                                <span>Fashion</span>
+                                <span>{{$rs->title}}</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

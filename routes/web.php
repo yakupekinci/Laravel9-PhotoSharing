@@ -22,6 +22,7 @@ use App\Http\Controllers\HomeController;
  Route::get('/photo/{id}',[HomeController::class,'photo'])->name('photo');
 
 
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
