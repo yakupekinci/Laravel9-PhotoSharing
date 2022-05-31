@@ -80,7 +80,8 @@
                 </div>
             </div>
             <div class="categories-slider owl-carousel">
-                @foreach(  $photolist1 as $rs)
+
+                @foreach( $photolist1 as $rs)
                     <div class="cs-item">
                         <div class="cs-pic set-bg" data-setbg="{{Storage::url($rs->image)}}"></div>
                         <div class="cs-text">
@@ -90,35 +91,7 @@
                     </div>
             @endforeach
 
-                <!-- <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="{{asset("assets")}}/img/categories/cat-2.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Natural</h4>
-                        <span>325 pictures</span>
-                    </div>
-                </div>
 
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="{{asset("assets")}}/img/categories/cat-4.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Potrait</h4>
-                        <span>540 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="{{asset("assets")}}/img/categories/cat-3.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Social</h4>
-                        <span>120 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="{{asset("assets")}}/img/categories/space.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Space</h4>
-                        <span>170 pictures</span>
-                    </div>
-                </div>-->
             </div>
         </div>
     </section>
@@ -138,7 +111,7 @@
                             @foreach(  $photolist2 as $data)
                             <li data-filter=".{{$data->category->title}}">{{$data->category->title}}</li>
                             @endforeach
-                           
+
                         </ul>
                     </div>
                 </div>
@@ -159,84 +132,6 @@
                             </div>
                         </div>
                         @endforeach
-                        <!--
-                      <div class="pf-item large-width large-height set-bg lifestyle"
-                             data-setbg="{{asset("assets")}}/img/portfolio/pf-2.jpg">
-                            <a href="{{route('photo',['id'=>$rs->photos[0]->id??''])}}"><span class="icon_plus"></span></a>
-
-
-
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-
-                        <div class="pf-item large-width set-bg natural" data-setbg="{{asset("assets")}}/img/portfolio/pf-3.jpg">
-
-
-                            <a href="{{asset("assets")}}/img/portfolio/pf-3.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item large-height set-bg wedding" data-setbg="{{asset("assets")}}/img/portfolio/pf-4.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-4.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item set-bg lifestyle" data-setbg="{{asset("assets")}}/img/portfolio/pf-7.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-7.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item set-bg natural" data-setbg="{{asset("assets")}}/img/portfolio/pf-8.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-8.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item set-bg videos" data-setbg="{{asset("assets")}}/img/portfolio/pf-5.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-5.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item set-bg fashion" data-setbg="{{asset("assets")}}/img/portfolio/pf-6.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-6.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item large-width set-bg videos" data-setbg="{{asset("assets")}}/img/portfolio/pf-10.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-10.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                < <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item set-bg fashion" data-setbg="{{asset("assets")}}/img/portfolio/pf-11.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-11.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div>
-                        <div class="pf-item large-width large-height set-bg wedding"
-                             data-setbg="{{asset("assets")}}/img/portfolio/pf-9.jpg">
-                            <a href="{{asset("assets")}}/img/portfolio/pf-9.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
-
-                            <div class="pf-text">
-                                <span>{{$rs->title}}</span>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

@@ -11,9 +11,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $sliderdata = Photo::limit(4)->get();
-        $photolist1 = Category::limit(6)->get();
-        $photolist2 = Photo::limit(6)->get();
+        $sliderdata = Photo::limit(2)->get();
+        $photolist1 = Category::limit(99)->get();
+        $photolist2 = Photo::limit(99)->get();
         return view('home.index', [
 
                 'sliderdata' => $sliderdata,
