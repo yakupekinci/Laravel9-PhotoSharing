@@ -88,7 +88,7 @@
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">
                                  @foreach($mainCategories as $rs)
-                                <li><a href="./gallery.html">{{$rs->title}}<ul class="dropdown-menu-lg-right">
+                                <li><a href="{{route('categoryphotos',['id'=>$rs->id, 'slug'=>$rs->title])}}">{{$rs->title}}<ul class="dropdown-menu-lg-right">
                                             @if(count($rs->children))
                                                 @include('home.categorytree',['children' => $rs->children])
                                             @endif

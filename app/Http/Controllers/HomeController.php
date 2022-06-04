@@ -23,6 +23,7 @@ class HomeController extends Controller
         $sliderdata = Photo::limit(2)->get();
         $photolist1 = Category::limit(99)->get();
         $photolist2 = Photo::limit(99)->get();
+
         return view('home.index', [
 
                 'sliderdata' => $sliderdata,
@@ -39,27 +40,21 @@ class HomeController extends Controller
        $data = Photo::find($id);
 
         return view('home.photo',[
-
                 'data'=>$data,
             ]
-
         );
-
-
 
     }
     public function categoryphotos($id)
     {
-echo "a";
-exit();
 
-        $category = Photo::find($id);
+
+        $category = Category::find($id);
         $photos= DB::table('photos')->where('category_id',$id)->get();
-
         return view('home.categoryphotos',[
+                'category'=>$category,
+                'photos'=>$photos,
 
-                'data'=>$data,
-                'images'=>$images
             ]
 
         );
