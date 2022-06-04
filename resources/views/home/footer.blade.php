@@ -1,4 +1,4 @@
-<!-- Footer Section Begin -->
+x<!-- Footer Section Begin -->
 <footer class="footer-section">
     <div class="container">
         <div class="row">
@@ -6,7 +6,7 @@
                 <div class="fs-about">
                     <div class="fa-logo">
                         <a href="#">
-                            <img src="{{asset("assets")}}/{{asset("assets")}}/f-logo.png" alt="">
+                            <img src="{{asset("assets")}}/f-logo.png" alt="">
                         </a>
                     </div>
                     <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore

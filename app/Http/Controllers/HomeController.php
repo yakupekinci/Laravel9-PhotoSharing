@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+
+    public static function maincategorylist(){
+
+        return Category::where('parent_id','=',0)->with('children')->get();
+    }
+
+
+
 
     public function index()
     {
@@ -39,7 +48,25 @@ class HomeController extends Controller
 
 
     }
+    public function categoryphotos($id)
+    {
+echo "a";
+exit();
 
+        $category = Photo::find($id);
+        $photos= DB::table('photos')->where('category_id',$id)->get();
+
+        return view('home.categoryphotos',[
+
+                'data'=>$data,
+                'images'=>$images
+            ]
+
+        );
+
+
+
+    }
 
 
 }

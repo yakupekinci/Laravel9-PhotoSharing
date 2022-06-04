@@ -73,6 +73,9 @@
 <!-- Header Section Begin -->
 <header class="header-section">
     <div class="container-fluid">
+        @php
+        $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()
+        @endphp
         <div class="row">
             <div class="col-lg-12">
                 <div class="logo">
@@ -82,17 +85,24 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
+                        <li><a href="#">Categories</a>
+                            <ul class="dropdown">
+                                 @foreach($mainCategories as $rs)
+                                <li><a href="./gallery.html">{{$rs->title}}<ul class="dropdown-menu-lg-right">
+                                            @if(count($rs->children))
+                                                @include('home.categorytree',['children' => $rs->children])
+                                            @endif
+                                        </ul></a>
+
+                                </li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li class="active"><a href="./index.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
                         <li><a href="./services.html">Services</a></li>
-                        <li><a href="./portfolio.html">Portfolio</a></li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./gallery.html">Gallery</a></li>
-                                <li><a href="./portfolio-details.html">Portfolio Details</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                            </ul>
+                        <li><a href="#">Photos</a>
+
                         </li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="login.html">Login</a>
@@ -100,6 +110,7 @@
                                 <li><a href="login.html">Sign in</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </nav>
                 <div class="top-search search-switch">

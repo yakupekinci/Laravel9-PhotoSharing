@@ -20,6 +20,7 @@ use App\Http\Controllers\HomeController;
 
  Route::get('/', array(HomeController::class,'index'))->name('index');
  Route::get('/photo/{id}',[HomeController::class,'photo'])->name('photo');
+Route::get('/categoryphotos/{id}/{slug}',[HomeController::class,'categoryphotos'])->name('categoryphotos');
 
 
 
