@@ -83,10 +83,8 @@
                             <label>Image</label>
                             <div class="form-group">
 
-
                                 <div class="input-group col-xs-12">
                                     <input type="file" name="image" class="form-control custom-file-input">
-
 
                                 </div>
                             </div>

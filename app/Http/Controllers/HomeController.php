@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Photo;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +24,14 @@ class HomeController extends Controller
         $sliderdata = Photo::limit(2)->get();
         $photolist1 = Category::limit(99)->get();
         $photolist2 = Photo::limit(99)->get();
+        $setting= Setting::find();
 
         return view('home.index', [
 
                 'sliderdata' => $sliderdata,
                 'photolist1' => $photolist1,
                 'photolist2' => $photolist2,
+                'setting' => $setting,
 
             ]
 
