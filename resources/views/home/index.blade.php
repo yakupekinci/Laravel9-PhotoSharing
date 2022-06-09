@@ -7,6 +7,7 @@
 
 
 
+
 @section('content')
 
     <!-- Hero Section Begin -->
@@ -89,7 +90,7 @@
                         <div class="cs-pic set-bg" data-setbg="{{Storage::url($rs->image)}}"></div>
                         <div class="cs-text">
                             <h4>{{$rs->title}}</h4>
-                            <span>220 pictures</span>
+                            <span>{{$rs->photos()->count()}}</span>
                         </div>
                     </div>
             @endforeach
@@ -106,7 +107,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Photos</h2>
+                        <h2 id="photos">Photos</h2>
                     </div>
                     <div class="filter-controls">
                         <ul>
@@ -143,9 +144,6 @@
             <a href="#">Load More</a>
         </div>
     </section>
-    <!-- Portfolio Section End -->
-
-
 @endsection
 
 

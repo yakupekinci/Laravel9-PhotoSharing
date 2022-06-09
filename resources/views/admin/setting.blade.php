@@ -42,11 +42,12 @@
                     </div>
                 </div>
             </div>
-   <form role="form" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data ">
-
+  <form role="form" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data">
+       @csrf
 
             <div class="row">
-                <div class="col-12 col-sm-6">
+
+                <div class="col-12 col-sm-25">
                     <div class="card card-primary card-outline card-tabs">
                         <div class="card-header p-0 pt-1 border-bottom-0">
                             <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
@@ -54,7 +55,7 @@
                                     <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">General</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Smtp Email</a>
+                                    <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Smtp</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="custom-tabs-three-social-tab" data-toggle="pill" href="#custom-tabs-three-social" role="tab" aria-controls="custom-tabs-three-social" aria-selected="false">Social Media</a>
@@ -114,9 +115,8 @@
                                     <div class="form-group">
                                     <label>Icon</label>
                                     <div class="form-group">
-
                                         <div class="input-group col-xs-12">
-                                            <input type="file" name="icon" class="form-control custom-file-input">
+                                            <input type="file"  name="icon" class="form-control custom-file-input">
 
                                         </div>
                                     </div>
@@ -132,19 +132,19 @@
                                         <input type="text"  id="smtpemail" name="smtpemail" value="{{$data->smtpemail}}" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label><Smtp></Smtp>password</label>
+                                        <label>Smtppassword</label>
                                         <input type="text" id="smtppassword" name="smtppassword" value="{{$data->smtppassword}}" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Smtpport</label>
-                                        <input type="text"  id="smtpport" name="smtpport" value="{{$data->smtpport}}" class="form-control">
+                                        <input type="number"  id="smtpport" name="smtpport" value="{{$data->smtpport}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade active show" id="custom-tabs-three-social" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
 
                                     <div class="form-group">
                                         <label>Fax</label>
-                                        <input type="fax" id="id"  name="fax" value="{{$data->fax}}" class="form-control">
+                                        <input type="fax" id="fax"  name="fax" value="{{$data->fax}}" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Facebook</label>
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Instagram</label>
-                                        <input type="text" id="instagram"  name="instagram" value="{{$data->ınstagram}}" class="form-control">
+                                        <input type="text" id="instagram"  name="instagram" value="{{$data->instagram}}" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Youtube</label>
@@ -169,12 +169,18 @@
                                         <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
                                     </div>
                                     </div>
-                                <div class="tab-pane fade active show" id="custom-tabs-three-references" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+                                <div class="tab-pane fade active show" id="custom-tabs-three-contact" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
                                     <div class="form-group">
-                                        <label>References</label>
+                                        <label>Contact</label>
                                         <textarea id="contact" name="contact">{{$data->contact}}</textarea>
                                     </div>
                                     </div>
+                                <div class="tab-pane fade active show" id="custom-tabs-three-references" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+                                    <div class="form-group">
+                                        <label>References</label>
+                                        <textarea id="references" name="references">{{$data->references}}</textarea>
+                                    </div>
+                                </div>
 
                                         <button type="submit" class="btn btn-primary mb-2">Update Setting</button>
 
@@ -186,7 +192,7 @@
             </div>
         </div>
     </div>
-        <!-- content-wrapper ends -->
+     </form>   <!-- content-wrapper ends -->
 @endsection
                 @section('footer')
                     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

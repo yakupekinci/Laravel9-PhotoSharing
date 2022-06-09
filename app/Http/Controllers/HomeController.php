@@ -24,7 +24,7 @@ class HomeController extends Controller
         $sliderdata = Photo::limit(2)->get();
         $photolist1 = Category::limit(99)->get();
         $photolist2 = Photo::limit(99)->get();
-        $setting= Setting::find();
+        $setting= Setting::first();
 
         return view('home.index', [
 
@@ -37,6 +37,33 @@ class HomeController extends Controller
 
         );
 }
+    public function about()
+    {
+
+        $setting= Setting::first();
+        return view('home.about', [
+                'setting' => $setting,
+                ]);
+    }
+
+    public function references()
+    {
+
+        $setting= Setting::first();
+        return view('home.references', [
+            'setting' => $setting,
+        ]);
+    }
+    public function contact()
+    {
+
+        $setting= Setting::first();
+        return view('home.contact', [
+            'setting' => $setting,
+        ]);
+    }
+
+
         public function photo($id)
     {
 

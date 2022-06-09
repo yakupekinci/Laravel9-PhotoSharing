@@ -12,7 +12,7 @@
     <meta name="description" content="@yield("description")">
     <meta name="keywords" content="@yield("keywords")">
     <meta name="author" content="Yakup EKINCI">
-    <meta name="icon"  type="image/x-icon" href="@yield("description")">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
 
 
     <!-- Google Font -->

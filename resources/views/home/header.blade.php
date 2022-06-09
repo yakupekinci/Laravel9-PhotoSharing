@@ -85,6 +85,7 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
+                        <li class="active"><a href="{{route('index')}}">Home</a></li>
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">
                                  @foreach($mainCategories as $rs)
@@ -98,13 +99,10 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="#">Photos</a>
-
-                        </li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="#photos">Photos</a></li>
+                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                         <li><a href="login.html">Login</a>
                             <ul class="dropdown">
                                 <li><a href="login.html">Sign in</a></li>

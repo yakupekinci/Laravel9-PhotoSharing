@@ -16,28 +16,28 @@ class HomeController extends Controller
 
 
     }
-    public function setting(){
+        public function setting(){
 
-        $data=Setting::first();
-        if ($data===null)
-        {
-            $data=new Setting();
-            $data->title ='Project Title';
-            $data->save();
-            $data= Setting::first();
+            $data=Setting::first();
+            if ($data===null)
+            {
+                $data=new Setting();
+                $data->title ='Project Title';
+                $data->save();
+                $data= Setting::first();
 
+
+            }
+
+            return view("admin.setting",['data'=> $data]);
 
         }
-
-        return view("admin.setting",['data'=> $data]);
-
-    }
     public function settingUpdate(Request $request){
 
-        $id=$request->input('id');
+        $id=1;
 
         $data=Setting::find($id);
-        $data->title=$request->input('title');
+        $data->title= $request->input('title');
         $data->keywords=$request->input('keywords');
         $data->description=$request->input('description');
         $data->company=$request->input('company');
@@ -45,11 +45,10 @@ class HomeController extends Controller
         $data->phone=$request->input('phone');
         $data->fax=$request->input('fax');
         $data->email=$request->input('email');
-        $data->stmpserver=$request->input('stmpserver');
-        $data->stmpmail=$request->input('stmpmail');
-        $data->stmppassword=$request->input('stmppassword');
-        $data->stmpmail =$request->input('stmpmail');
-        $data->stmpport=$request->input('stmpport');
+        $data->smtpserver=$request->input('smtpserver');
+        $data->smtpemail=$request->input('smtpemail');
+        $data->smtppassword=$request->input('smtppassword');
+        $data->smtpport=$request->input('smtpport');
         $data->facebook=$request->input('facebook');
         $data->instagram=$request->input('instagram');
         $data->twitter=$request->input('twitter');
@@ -57,9 +56,9 @@ class HomeController extends Controller
         $data->aboutus=$request->input('aboutus');
         $data->contact=$request->input('contact');
         $data->references=$request->input('references');
+
         if($request->file('icon')){
             $data->icon= $request->file('icon')->store('images');
-
         }
         $data->status=$request->input('status');
         $data->save();

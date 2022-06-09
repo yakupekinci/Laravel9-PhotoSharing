@@ -17,10 +17,16 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-
+//****************************** HOME PAGE ROUTES ************************************//
  Route::get('/', array(HomeController::class,'index'))->name('index');
+Route::get('/about', array(HomeController::class,'about'))->name('about');
+Route::get('/references', array(HomeController::class,'references'))->name('references');
+Route::get('/contact', array(HomeController::class,'contact'))->name('contact');
+
+
  Route::get('/photo/{id}',[HomeController::class,'photo'])->name('photo');
-Route::get('/categoryphotos/{id}/{slug}',[HomeController::class,'categoryphotos'])->name('categoryphotos');
+
+ Route::get('/categoryphotos/{id}/{slug}',[HomeController::class,'categoryphotos'])->name('categoryphotos');
 
 
 

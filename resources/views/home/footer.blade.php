@@ -1,4 +1,4 @@
-x<!-- Footer Section Begin -->
+<!-- Footer Section Begin -->
 <footer class="footer-section">
     <div class="container">
         <div class="row">
@@ -33,14 +33,14 @@ x<!-- Footer Section Begin -->
                 <div class="fs-widget">
                     <h5>Quick links</h5>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{route('index')}}">Home</a></li>
+                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                     <ul>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="{{route('index')}}">Photos</a></li>
+                        <li><a href="{{route('index')}}">Categories</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
                     </ul>
                 </div>
             </div>

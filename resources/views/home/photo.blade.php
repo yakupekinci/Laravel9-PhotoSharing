@@ -24,7 +24,8 @@
 
                                 </div>
                             </form></div>
-    <a href="#"> {{$data->category->title}}/</a><a href="#"> {{$data->title}}</a>
+    <a href="#"> {{$data->category->title}}/</a>
+    <a href="#"> {{$data->title}}</a>
 
 
 <div> <p><h3><i>{{$data->title}}</i></h3></p></div>
