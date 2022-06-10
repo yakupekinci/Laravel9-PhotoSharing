@@ -32,7 +32,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin/faq">
+            <a class="nav-link" href="{{route('admin.faq.index')}}">
                 <i class="mdi mdi-comment-alert"></i>
                 <span class="menu-title">&nbsp;&nbsp; FAQ</span>
             </a>
