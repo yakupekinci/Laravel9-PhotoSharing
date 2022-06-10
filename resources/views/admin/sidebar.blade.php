@@ -38,7 +38,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin/messages">
+            <a class="nav-link" href="{{route('admin.message.index')}}">
                 <i class="mdi mdi-message-text  "></i>
                 <span class="menu-title">&nbsp;&nbsp; Messages</span>
             </a>

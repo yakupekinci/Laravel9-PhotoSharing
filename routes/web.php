@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminPhotoController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
  use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\AdminPanel\HomeController as  AdminHomeController;
@@ -19,13 +20,14 @@ use App\Http\Controllers\HomeController;
 
 //****************************** HOME PAGE ROUTES ************************************//
  Route::get('/', array(HomeController::class,'index'))->name('index');
-Route::get('/about', array(HomeController::class,'about'))->name('about');
-Route::get('/references', array(HomeController::class,'references'))->name('references');
-Route::get('/contact', array(HomeController::class,'contact'))->name('contact');
+ Route::get('/about', array(HomeController::class,'about'))->name('about');
+ Route::get('/references', array(HomeController::class,'references'))->name('references');
+ Route::get('/contact', array(HomeController::class,'contact'))->name('contact');
+ Route::post('/storemessage', array(HomeController::class,'storemessage'))->name('storemessage');
+
 
 
  Route::get('/photo/{id}',[HomeController::class,'photo'])->name('photo');
-
  Route::get('/categoryphotos/{id}/{slug}',[HomeController::class,'categoryphotos'])->name('categoryphotos');
 
 
@@ -73,6 +75,17 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
 
     });
+
+    //****************************** ADMİN MESSAGE ROUTES ************************************//
+    Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function (){
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
+    });
+
+
 
 
 });

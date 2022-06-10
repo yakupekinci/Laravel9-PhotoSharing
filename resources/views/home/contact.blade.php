@@ -68,12 +68,14 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-form">
                         <h3>Work with Me!</h3>
-
-                        <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="Website">
-                            <textarea placeholder="Message"></textarea>
+                        @include('home.messages')
+                        <form id="checkout-form" action="{{route("storemessage")}}" class="clearfix" method="post">
+                            @csrf
+                            <input type="text" name="name" placeholder="Name & Surname">
+                            <input type="text" name="phone" placeholder="Phone Number">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="text" name="subject" placeholder="Subject">
+                            <textarea  name="message" placeholder="Your Message"></textarea>
                             <button type="submit" class="site-btn">Submit</button>
                         </form>
                     </div>
