@@ -79,8 +79,8 @@
                                     @foreach($data as $rs )
                                     <tr>
                                         <td>{{$rs->id}}</td>
-                                        <td><a href="{{route('admin.photo.show',['id'=>$rs->photo_id])}}">{{$rs->photo->title}}</td>
                                         <td>{{$rs->user->name}}</td>
+                                        <td><a href="{{route('admin.photo.show',['id'=>$rs->photo_id])}}">{{$rs->photo->title}}</td>
                                         <td>{{$rs->subject}}</td>
                                         <td>{{$rs->review}}</td>
                                         <td>{{$rs->rate}}</td>

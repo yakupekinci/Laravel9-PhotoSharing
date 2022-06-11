@@ -101,18 +101,43 @@
                         <li><a href="{{route('references')}}">References</a></li>
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
-                        <li><a href="login.html">Login</a>
-                            <ul class="dropdown">
-                                <li><a href="login.html">Sign in</a></li>
-                            </ul>
-                        </li>
+                        @auth()
+                        <li style="width: 50px" class="nav-item nav-profile dropdown">
 
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                                <img src="http://127.0.0.1:8000/assets/images/faces/face5.jpg" alt="profile">
+                                <span class="nav-profile-name">{{Auth::user()->name}}</span>
+                            </a>
+                            <ul  class="dropdown">
+
+                                <li>
+                                    <a href="/logoutuser">Logout</a>
+                                </li>
+                                </ul>
+                                @else
+
+                            <li style="width: 50px" class="nav-item nav-profile dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                                    <img src="http://127.0.0.1:8000/assets/images/faces/face5.jpg" alt="profile">
+                                    <span class="nav-profile-name">Guest</span>
+                                </a>
+                                <ul  class="dropdown">
+                                    <li>
+                                        <a href="/login">Login</a>
+                                        <a href="/registeruser">Join</a>
+                                    </li>
+                                </ul>
+                                @endauth
+
+                        </li>
                     </ul>
                 </nav>
-                <div class="top-search search-switch">
+
+                    <div class="top-search search-switch">
                     <i class="fa fa-search"></i>
                 </div>
                 <div id="mobile-menu-wrap"></div>
+
             </div>
         </div>
     </div>

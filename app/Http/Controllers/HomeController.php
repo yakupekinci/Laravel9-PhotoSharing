@@ -113,7 +113,7 @@ class HomeController extends Controller
     {
 
        $data = Photo::find($id);
-       $reviews =Comment::where('photo_id',$id)->get();
+       $reviews =Comment::where('photo_id',$id)->where('status','True')->get();
         return view('home.photo',[
                 'data'=>$data,
                 'reviews'=>$reviews,
@@ -134,10 +134,20 @@ class HomeController extends Controller
             ]
 
         );
+    }
 
+         public function logout(Request $request){
+
+             Auth::logout();
+             $request->session()->invalidate();
+             $request->session()->regenerateToken();
+             return redirect('/');
 
 
     }
+
+
+
 
 
 }
