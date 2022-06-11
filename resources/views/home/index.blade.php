@@ -112,8 +112,8 @@
                     <div class="filter-controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            @foreach(  $photolist2 as $data)
-                            <li data-filter=".{{$data->category->title}}">{{$data->category->title}}</li>
+                            @foreach(  \App\Models\Category::all() as $data)
+                            <li data-filter=".{{$data->title}}">{{$data->title}}</li>
                             @endforeach
 
                         </ul>

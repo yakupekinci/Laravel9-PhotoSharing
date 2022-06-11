@@ -78,27 +78,25 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-12">
+                <div  style="padding-top: 200px" class="col-lg-12">
+                    <div   class="blog-details-text"><div>
 
-
-                    <div class="blog-details-text"><div>
-                            <div style="padding-left:390px">   <form>
-                                <input id="kartik" class="rating" data-stars="5" data-step="0.1" title=""/>
-                                <div class="form-group" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-default btn-secondary">Reset</button>
-
-                                </div>
-                            </form></div>
     <a href="#"> {{$data->category->title}}/</a>
     <a href="#"> {{$data->title}}</a>
 
 
-<div>
-    <h3>
-        <i>{{$data->title}}</i>
-    </h3>
+
+<div> @include("home.messages")
+    <div style="padding-left: 800px" >
+        <h5>Rate</h5>
+        <input  class="rating" data-stars="5" value="{{$data->rate}}"/>
     </div>
+    <h1>
+        <i>{{$data->title}}</i>
+
+    </h1>
+
+</div>
 
 
 </div>
@@ -117,34 +115,7 @@
                                 <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
-                        <div class="bd-related-post">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <a href="#" class="post-item prev-item">
-                                        <h6><span class="arrow_carrot-left"></span> Previous posts</h6>
-                                        <div class="pi-pic">
-                                            <img src="{{asset("assets")}}/img/blog/details/prev.jpg" alt="">
-                                        </div>
-                                        <div class="pi-text">
-                                            <div class="label">Stories</div>
-                                            <h5>The Best Weeknight Baked<br /> Potatoes, 3 Creative Ways</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <a href="#" class="post-item next-item">
-                                        <h6>Next posts <span class="arrow_carrot-right"></span></h6>
-                                        <div class="pi-pic">
-                                            <img src="{{asset("assets")}}/img/blog/details/next.jpg" alt="">
-                                        </div>
-                                        <div class="pi-text">
-                                            <div class="label">Typography</div>
-                                            <h5>The $8 French Rosé I Buy in<br /> Bulk Every Summer</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="bd-author">
                             <div class="avatar-pic">
                                 <img src="{{asset("assets")}}/img/blog/details/post-author.jpg" alt="">
@@ -164,66 +135,59 @@
                             </div>
                         </div>
                         <div class="bd-comment-form">
+                            <h4>Comments</h4>
                             <div class="row">
+
                                 <div class="col-lg-6">
-                                    <h4>Comment</h4>
+
+                                    @foreach($reviews as $rs)
                                     <div class="comment-item">
                                         <div class="ci-pic">
+
                                             <img src="{{asset("assets")}}/img/blog/details/comment/comment-1.jpg" alt="">
                                         </div>
                                         <div class="ci-text">
-                                            <h5>Brandon Kelley</h5>
-                                            <p>Consectetur adipiscing eiusmod tempor incididunt t labore et dolore magna
-                                                aliqua. Quis ipsum suspendisse ultrices.</p>
+                                            <h5><i>{{$rs->user->name}}</i></h5>
+                                            <strong> {{$rs->subject}}</strong>
+                                            <p>{{$rs->review}}</p>
                                             <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug,15, 2019</li>
+                                                <li><i class="fa fa-clock-o"></i> {{$rs->created_at}}</li>
                                                 <li><i class="fa fa-heart-o"></i> Like</li>
                                                 <li><i class="fa fa-share-square-o"></i> Reply</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="comment-item">
-                                        <div class="ci-pic">
-                                            <img src="{{asset("assets")}}/img/blog/details/comment/comment-2.jpg" alt="">
-                                        </div>
-                                        <div class="ci-text">
-                                            <h5>Brandon Kelley</h5>
-                                            <p>Consectetur adipiscing eiusmod tempor incididunt t labore et dolore magna
-                                                aliqua. Quis ipsum suspendisse ultrices.</p>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug,15, 2019</li>
-                                                <li><i class="fa fa-heart-o"></i> Like</li>
-                                                <li><i class="fa fa-share-square-o"></i> Reply</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="comment-item">
-                                        <div class="ci-pic">
-                                            <img src="{{asset("assets")}}/img/blog/details/comment/comment-3.jpg" alt="">
-                                        </div>
-                                        <div class="ci-text">
-                                            <h5>Brandon Kelley</h5>
-                                            <p>Consectetur adipiscing eiusmod tempor incididunt t labore et dolore magna
-                                                aliqua. Quis ipsum suspendisse ultrices.</p>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug,15, 2019</li>
-                                                <li><i class="fa fa-heart-o"></i> Like</li>
-                                                <li><i class="fa fa-share-square-o"></i> Reply</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="leave-form">
-                                        <h4>Leave a comment</h4>
-                                        <form action="#">
-                                            <input type="text" placeholder="Name">
-                                            <input type="text" placeholder="Email">
-                                            <input type="text" placeholder="Website">
-                                            <textarea placeholder="Comment"></textarea>
+                                <div class="leave-form">
+                                    <h4>Leave a comment</h4>
+                                    <form   action="{{route('storecomment')}}" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <input type="hidden" name="photo_id" value="{{$data->id}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text"  name="subject" placeholder="Subject">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea  name="review" placeholder="Your review"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div>
+                                                <strong>Your Rating :</strong>
+                                                <input id="kartik" class="rating" name="rate" value="{{$data->rate}}" data-stars="5" data-step="1" title=""/>
+                                                <div class="form-group">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @auth
                                             <button type="submit" class="site-btn">Submit</button>
-                                        </form>
-                                    </div>
+                                        @else
+                                        <a href="/login" class="primary-btn">For Submit Your Review,Please Login</a>
+                                        @endauth
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -76,6 +76,9 @@
                             <label class= "sr-only" for="inlineFormInputName2">Videlink</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="videlink" placeholder="Videlink">
 
+                            <label class= "sr-only" for="inlineFormInputName2">Rate</label>
+                            <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="0">
+
                             <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
                             <textarea  class="form-control mb-2 mr-sm-2" id="detail" name="detail" ></textarea>
                             <script>
