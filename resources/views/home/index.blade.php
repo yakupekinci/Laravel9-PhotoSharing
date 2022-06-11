@@ -110,6 +110,7 @@
                         <h2 id="photos">Photos</h2>
                     </div>
                     <div class="filter-controls">
+
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             @foreach(  \App\Models\Category::all() as $data)
@@ -129,9 +130,10 @@
                         <div class="pf-item set-bg {{$data->category->title}}" data-setbg="{{Storage::url($data->image)}}">
                             <a href="{{route('photo',['id'=>$data])}}"><span class="icon_plus"></span></a>
 
+                            <input  class="rating" data-stars="5" value="{{$data->comments()->average('rate')}}"/>
 
                             <div class="pf-text">
-
+                                <strong style="color: red">( {{$data->comments->count('id')}} )</strong>
                                 <span>{{$data->title}}</span>
                             </div>
                         </div>

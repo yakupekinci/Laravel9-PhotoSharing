@@ -86,10 +86,12 @@
 
 
 
+
 <div> @include("home.messages")
     <div style="padding-left: 800px" >
+        <a href="#"> Review({{$data->comments->count('id')}})</a>
         <h5>Rate</h5>
-        <input  class="rating" data-stars="5" value="{{$data->rate}}"/>
+        <input  class="rating" data-stars="5" value="{{$data->comments()->average('rate')}}" value="{{$data->rate}}"/>
     </div>
     <h1>
         <i>{{$data->title}}</i>
@@ -176,7 +178,7 @@
                                         <div class="form-group">
                                             <div>
                                                 <strong>Your Rating :</strong>
-                                                <input id="kartik" class="rating" name="rate" value="{{$data->rate}}" data-stars="5" data-step="1" title=""/>
+                                                <input id="kartik" class="rating" name="rate" data-stars="5" data-step="1" title=""/>
                                                 <div class="form-group">
                                                 </div>
                                             </div>
