@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,15 @@ class UserController extends Controller
         $comments= Comment::where('user_id','=',Auth::id())->get();
         return view('home.user.comments', [
             'comments' => $comments,
+        ]);
+    }
+
+    public function userphoto()
+    {
+
+        $userphoto= Photo::where('user_id','=',Auth::id())->get();
+        return view('home.user.sharephoto', [
+            'userphoto' => $userphoto,
         ]);
     }
 

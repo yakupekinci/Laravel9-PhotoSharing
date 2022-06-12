@@ -56,7 +56,7 @@
                         <form class="form-inline" action="{{route('admin.photo.store')}}"  method="post" enctype="multipart/form-data">
                             @csrf
 
-                            <label class= "sr-only" for="inlineFormInputName2">Parent Photo</label>
+                            <label class= "sr-only" for="inlineFormInputName2">Parent Category</label>
                             <select class="form-control mb-2 mr-sm-3" name="category_id"  style="...">
 
                                 @foreach($data as $rs)

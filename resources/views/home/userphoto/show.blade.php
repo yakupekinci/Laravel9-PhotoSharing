@@ -14,8 +14,8 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="d-flex align-items-end flex-wrap">
                             <div class="me-md-3 me-xl-5">
-                                <a href="{{route('admin.photo.edit',['id'=>$data->id])}}" class="btn btn-primary">Edit </a>
-                                <a href="{{route('admin.photo.destroy',['id'=>$data->id])}}"  onclick="return confirm('Deleting !! Are you sure ?') " class="btn btn-danger">Delete</a>
+                                <a href="{{route('userphoto.edit',['id'=>$data->id])}}" class="btn btn-primary">Edit </a>
+                                <a href="{{route('userphoto.destroy',['id'=>$data->id])}}"  onclick="return confirm('Deleting !! Are you sure ?') " class="btn btn-danger">Delete</a>
 
                             </div>
                             <div class="d-flex">
@@ -83,6 +83,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>Rate</th>
+                                                <td>
+                                                    {{$data->rate}}
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th>Image</th>
@@ -107,7 +111,6 @@
                                                 <th>Updated Photo</th>
                                                 <td>{{$data->updated_at}}</td>
                                             </tr>
-
 
                                         </table>
                                     </div>

@@ -22,7 +22,7 @@
                             </div>
                             <div class="d-flex">
                                 <i class="mdi mdi-home text-muted hover-cursor"></i>
-                                <p class="text-muted mb-0 hover-cursor">&nbsp;<a href="{{route('admin.index')}}/">/Dashboard&nbsp;/</a>&nbsp;</p>
+                                <p class="text-muted mb-0 hover-cursor">&nbsp;<a href="{{route('userphoto.index')}}/">/Dashboard&nbsp;/</a>&nbsp;</p>
                                 <p class="text-primary mb-0 hover-cursor">Edit Photo</p>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         <h4 class="card-title">Photo Category</h4>
 
 
-                        <form class="form-inline" action="{{route('admin.photo.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                        <form class="form-inline" action="{{route('userphoto.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <label class= "sr-only" for="inlineFormInputName2">Parent Category</label>
                             <select class="form-control mb-2 mr-sm-3" name="category_id"  style="...">
@@ -74,6 +74,8 @@
                             <label class= "sr-only" for="inlineFormInputName2">Videlink</label>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="videlink" value=" {{$data->videlink}}">
 
+                            <label class= "sr-only" for="inlineFormInputName2">Rate</label>
+                            <input type="number" class="form-control mb-2 mr-sm-2" name="rate" value="{{$data->rate}}">
 
                             <label class= "sr-only" for="inlineFormInputName2">Detail Inf</label>
                             <textarea  class="form-control mb-2 mr-sm-2" id="detail" name="detail"> {!! $data->detail !!}</textarea>
@@ -90,15 +92,6 @@
 
 
 
-                            <label >Status</label>
-
-                            <select  class="form-control mb-2 mr-sm-2"  name="status">
-
-
-                                <option >{{$data->status}}</option>
-                                    <option value="True">True</option>
-                                    <option value="False">False</option>
-                                   </select>
 
 
                             <div style="padding-top: 10px">
