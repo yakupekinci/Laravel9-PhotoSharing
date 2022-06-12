@@ -17,7 +17,7 @@
 <script src="{{asset("assets")}}/vendors/base/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
-<script src="{{asset("assets")}}/vendors/chart.{{asset("assets")}}/js/Chart.min.js"></script>
+<script src="{{asset("assets")}}/vendors/chart.js/Chart.min.js"></script>
 <script src="{{asset("assets")}}/vendors/datatables.net/jquery.dataTables.js"></script>
 <script src="{{asset("assets")}}/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
 <!-- End plugin js for this page-->

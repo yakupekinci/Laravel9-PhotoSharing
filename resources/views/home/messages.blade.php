@@ -6,7 +6,7 @@
 @endif
 
 
-@if($messages=Session::get('eror'))
+@if($messages=Session::get('error'))
     <div class="alert alert-danger alert-box">
         <button type="button" class="close" data-dismiss="alert">x</button>
         <strong>{{$messages}}</strong>
