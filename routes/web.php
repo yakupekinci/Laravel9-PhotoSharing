@@ -50,9 +50,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //****************************** ADMİN AUTH CONTROL ************************************//
 Route::middleware('auth')->group(function (){
-//****************************** USER ROUTES ************************************//
+//****************************** USER PANEL ROUTES ************************************//
     Route::prefix('userpanel/')->name('userpanel.')->controller(UserController::class)->group(function () {
         Route::get('/','index')->name('index');
+        Route::get('/reviews','reviews')->name('reviews');
+        Route::get('/reviewsdestroy/{id}', 'reviewsdestroy')->name('reviewsdestroy');
 
         });
 

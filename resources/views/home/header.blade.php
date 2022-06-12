@@ -118,7 +118,7 @@
                                     <a href="/logoutuser">My Photos</a>
                                 </li>
                                 <li>
-                                    <a href="/logoutuser">My Reviews</a>
+                                    <a href="{{route('userpanel.reviews')}}">My Reviews</a>
                                 </li>
                                 <li>
                                     <a href="/logoutuser">Checkout</a>
