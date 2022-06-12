@@ -148,6 +148,7 @@ class HomeController extends Controller
     public function loginadmincheck(Request $request): \Illuminate\Http\RedirectResponse
     {
 
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -158,9 +159,8 @@ class HomeController extends Controller
 
             return redirect()->intended('/admin');
         }
-
-        return back()->withErrors([
-            'eror' => 'The provided credentials do not match our records.',
+        return back()->with([
+            'error' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
 

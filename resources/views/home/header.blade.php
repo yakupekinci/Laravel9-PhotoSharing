@@ -110,9 +110,23 @@
                             </a>
                             <ul  class="dropdown">
 
+
+                                <li>
+                                    <a href="/userpanel">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="/logoutuser">My Photos</a>
+                                </li>
+                                <li>
+                                    <a href="/logoutuser">My Reviews</a>
+                                </li>
+                                <li>
+                                    <a href="/logoutuser">Checkout</a>
+                                </li>
                                 <li>
                                     <a href="/logoutuser">Logout</a>
                                 </li>
+
                                 </ul>
                                 @else
 

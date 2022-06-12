@@ -32,8 +32,7 @@
                         <div class="brand-logo">
                             <img src="{{asset("assets")}}/images/logo.svg" alt="logo"></div>
 
-                        <h4>Sign in to continue.</h4>
-
+                        <i>Sign in to continue.</i>
                         @include('home.messages')
                         <form  action="{{route('loginadmincheck')}}" class="pt-3" method="post">
                             @csrf
