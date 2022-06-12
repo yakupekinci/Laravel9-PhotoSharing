@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminPhotoController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
@@ -87,6 +88,7 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     //****************************** ADMİN MESSAGE ROUTES ************************************//
     Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function (){
         Route::get('/','index')->name('index');
+        Route::get('/edit/{id}','show')->name('edit');
         Route::get('/show/{id}','show')->name('show');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
@@ -109,6 +111,16 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
 
+    });
+
+    //****************************** ADMİN USER ROUTES ************************************//
+    Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function (){
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::post('/addrole/{id}','addrole')->name('addrole');
+        Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
     });
 
 

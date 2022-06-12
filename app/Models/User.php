@@ -61,9 +61,12 @@ class User extends Authenticatable
 
     public function reviews(){
 
-        return $this->belongsTo(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 
+    public function roles(){
 
+        return $this->belongsToMany(Role::class,'roleusers');
+    }
 
 }
