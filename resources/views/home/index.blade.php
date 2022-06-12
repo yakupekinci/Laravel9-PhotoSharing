@@ -128,9 +128,14 @@
                     <div class="portfolio-filter">
                         @foreach(  $photolist2 as $data)
                         <div class="pf-item set-bg {{$data->category->title}}" data-setbg="{{Storage::url($data->image)}}">
-                            <a href="{{route('photo',['id'=>$data])}}"><span class="icon_plus"></span></a>
+                            <div style="padding-bottom: 250px">
+                                <input  class="rating" data-stars="5" value="{{$data->comments()->average('rate')}}"/>
+                            </div>
+                            <div>
+                            <a href="{{route('photo',['id'=>$data])}}"><span class="icon_circle-slelected"></span></a>
+                        </div>
 
-                            <input  class="rating" data-stars="5" value="{{$data->comments()->average('rate')}}"/>
+
 
                             <div class="pf-text">
                                 <strong style="color: red">( {{$data->comments->count('id')}} )</strong>

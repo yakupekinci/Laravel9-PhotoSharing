@@ -105,7 +105,7 @@
 
                         <div class="bd-quote"></div>
 
-                            <p>{!!$data->detail!!}</p>
+                          <i><p>{!!$data->detail!!}</p></i>
 
 
                         <div class="bd-tag-share">
@@ -161,7 +161,7 @@
                                     </div>
                                     @endforeach
                                 </div>
-                                <div class="leave-form">
+                                <div  style="width:450px" class="leave-form">
                                     <h4>Leave a comment</h4>
                                     <form   action="{{route('storecomment')}}" method="post">
                                         @csrf
@@ -178,7 +178,7 @@
                                         <div class="form-group">
                                             <div>
                                                 <strong>Your Rating :</strong>
-                                                <input id="kartik" class="rating" name="rate" data-stars="5" data-step="1" title=""/>
+                                                <input id="kartik" class="rating" name="rate" data-stars="5" data-step="0.1" title=""/>
                                                 <div class="form-group">
                                                 </div>
                                             </div>

@@ -43,13 +43,6 @@
                 <span class="menu-title">&nbsp;&nbsp; Messages</span>
             </a>
         </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/social/">
-                <i class="mdi mdi-view-headline menu-icon"></i>
-                <span class="menu-title">Social</span>
-            </a>
-        </li>
         <h4 style="padding:25px  25px">LABELS</h4>
         <li class="nav-item">
             <a class="nav-link" href="/admin/setting/">

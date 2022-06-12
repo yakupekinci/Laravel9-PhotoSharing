@@ -40,11 +40,12 @@
                     <div class="portfolio-filter" style="position: relative; height: 1520px;">
                         @foreach(  $photos as $data)
                             <div class="pf-item set-bg all" data-setbg="{{Storage::url($data->image)}}">
-                                <a href="{{route('photo',['id'=>$data->id])}}"><span class="icon_plus"></span></a>
-
-
+                                <div style="padding-bottom: 250px">
+                                    <input  class="rating" data-stars="5" value="{{$data->comments()->average('rate')}}"/>
+                                </div>
+                              <div> <a href="{{route('photo',['id'=>$data->id])}}"><span class="icon_plus"></span></a></div>
                                 <div class="pf-text">
-
+                                    <strong style="color: red">( {{$data->comments->count('id')}} )</strong>
                                     <span>{{$data->title}}</span>
                                 </div>
                             </div>

@@ -46,11 +46,11 @@
 
 
             <div class="row">
-                <div class="col-md-7 grid-margin stretch-card">
+                <div class="col-md-15 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-title">Welcome Admin Panel</p>
-                            <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
+                            <strong class="card-title">Welcome Admin Panel</strong>
+
                             <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3"></div>
                         </div>
                     </div>

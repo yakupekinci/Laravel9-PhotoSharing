@@ -25,7 +25,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $sliderdata = Photo::limit(2)->get();
+        $sliderdata = Photo::limit(8)->get();
         $photolist1 = Category::limit(99)->get();
         $photolist2 = Photo::limit(99)->get();
         $setting= Setting::first();
@@ -126,7 +126,7 @@ class HomeController extends Controller
 
 
         $category = Category::find($id);
-        $photos= DB::table('photos')->where('category_id',$id)->get();
+        $photos= Photo::where('category_id',$id)->get();
         return view('home.categoryphotos',[
                 'category'=>$category,
                 'photos'=>$photos,

@@ -55,7 +55,7 @@
                                     <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">General</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Smtp</a>
+                                    <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-smtp" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Smtp</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="custom-tabs-three-social-tab" data-toggle="pill" href="#custom-tabs-three-social" role="tab" aria-controls="custom-tabs-three-social" aria-selected="false">Social Media</a>

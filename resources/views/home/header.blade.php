@@ -115,13 +115,13 @@
                                     <a href="/userpanel">My Profile</a>
                                 </li>
                                 <li>
-                                    <a href="/logoutuser">My Photos</a>
+                                    <a href="{{route('userpanel.reviews')}}">My Photos</a>
                                 </li>
                                 <li>
                                     <a href="{{route('userpanel.reviews')}}">My Reviews</a>
                                 </li>
                                 <li>
-                                    <a href="/logoutuser">Checkout</a>
+                                    <a href="/{{route('userpanel.reviews')}}">Checkout</a>
                                 </li>
                                 <li>
                                     <a href="/logoutuser">Logout</a>
