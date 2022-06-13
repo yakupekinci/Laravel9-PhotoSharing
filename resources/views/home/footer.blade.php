@@ -9,25 +9,15 @@
                             <img src="{{asset("assets")}}/f-logo.png" alt="">
                         </a>
                     </div>
+                    <h5 style="color: whitesmoke">CONTACT US</h5>
+                    &nbsp;
                     <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                         et dolore magna aliqua.</p>
-                    <div class="fa-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </div>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="fs-widget">
-                    <h5>Instagram</h5>
-                    <div class="fw-instagram">
-                        <img src="{{asset("assets")}}/instagram/insta-1.jpg" alt="">
-                        <img src="{{asset("assets")}}/instagram/insta-2.jpg" alt="">
-                        <img src="{{asset("assets")}}/instagram/insta-3.jpg" alt="">
-                    </div>
-                </div>
+
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="fs-widget">
@@ -38,8 +28,8 @@
                         <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                     <ul>
-                        <li><a href="{{route('index')}}">Photos</a></li>
-                        <li><a href="{{route('index')}}">Categories</a></li>
+                        <li><a href="/#photos">Photos</a></li>
+                        <li><a href="/#">Categories</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
                     </ul>
                 </div>

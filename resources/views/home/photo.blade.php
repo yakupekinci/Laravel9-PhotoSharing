@@ -1,7 +1,8 @@
 @extends('layouts.homebase')
 
-@section('title',$data->title)
-
+@section('title', $data->title)
+@section('description', $data->description)
+@section('keywords', $data->keywords)
 
 
 @section('content')
@@ -88,6 +89,7 @@
 
 
 <div> @include("home.messages")
+
     <div style="padding-left: 800px" >
         <a href="#"> Review({{$data->comments->count('id')}})</a>
         <h5>Rate</h5>
@@ -161,7 +163,7 @@
                                     </div>
                                     @endforeach
                                 </div>
-                                <div  style="width:450px" class="leave-form">
+                                <div   style="width:450px;" class="leave-form">
                                     <h4>Leave a comment</h4>
                                     <form   action="{{route('storecomment')}}" method="post">
                                         @csrf
@@ -187,7 +189,7 @@
                                         @auth
                                             <button type="submit" class="site-btn">Submit</button>
                                         @else
-                                        <a href="/login" class="primary-btn">For Submit Your Review,Please Login</a>
+                                        <a href="/login" class="btn btn-warning">For Submit Your Review, Please Login</a>
                                         @endauth
                                     </form>
                                 </div>

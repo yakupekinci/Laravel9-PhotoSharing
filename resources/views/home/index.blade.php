@@ -9,7 +9,12 @@
 
 
 @section('content')
-
+    <div class="fa-social">
+        <a href="{{$setting->facebook}}"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;
+        <a href="{{$setting->twitter}}"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+        <a href="{{$setting->youtube}}"><i class="fa fa-youtube-play"></i></a>&nbsp;&nbsp;
+        <a href="{{$setting->instagram}}"><i class="fa fa-instagram"></i></a>&nbsp;&nbsp;
+    </div>
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="hs-slider owl-carousel">
@@ -20,10 +25,8 @@
                         <div class="col-lg-12">
                             <div class="hs-text">
                                 <h2>{{$rs->title}}</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et<br /> dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida accumsan lacus vel facilisis.</p>
-                                <a href="#" class="primary-btn">Contact us</a>
+                                <p>{{$rs->category->title}}</p>
+                                <a href="/photo/{{$rs->id}}" class="primary-btn">More Info</a>
                             </div>
                         </div>
                     </div>
@@ -151,6 +154,7 @@
             <a href="#">Load More</a>
         </div>
     </section>
+
 @endsection
 
 
